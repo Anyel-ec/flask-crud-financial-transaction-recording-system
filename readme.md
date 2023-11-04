@@ -1,47 +1,49 @@
-# Simple Flask Application
+# Financial Transaction Recording System in Flask
 
-This is a simple Flask application that performs CRUD operations on a list of transactions.
+This repository contains a simple financial transaction recording system developed in Flask, with basic Create, Read, Update and Delete (CRUD) operations. The system allows users to track financial transactions, including income and expenses, through an easy-to-use web interface.
 
-## Libraries Used
+## Features
 
-```python
-from flask import Flask, redirect, request, render_template, url_for
-```
+### Read Transactions
+- Access the main page ("/") to see all recorded transactions.
 
-## Application Initialization
+### Add Transactions
+- Navigate to the "/add" path to add a new transaction using a form.
 
-```python
-app = Flask(__name__)
-```
+### Edit Transactions
+- Access the path "/edit/<transaction_id>" to edit an existing transaction.
 
-## Sample Data
+### Delete Transactions
+- Use the path "/delete/<transaction_id>" to delete a specific transaction.
 
-The application uses a list of transactions as sample data.
+## Use
 
-```python
-transactions = [
-    {'id': 1, 'date': '2023-06-01', 'amount': 100},
-    {'id': 2, 'date': '2023-06-02', 'amount': -200},
-    {'id': 3, 'date': '2023-06-03', 'amount': 300}
-]
-```
+1. Make sure you have Flask installed. If you don't have it, install it using `pip install flask`.
+2. Run the Flask application with the following command in the terminal:
 
-## Routes
+    ```bash
+    python app.py
+    ```
 
-The application has the following routes:
+3. Open a web browser and access `http://localhost:5000` to use the system.
 
-- `@app.route("/")`: Lists all transactions.
-- `@app.route("/add", methods=["GET", "POST"])`: Displays the form to add a transaction and handles the POST request to create a new transaction.
-- `@app.route("/edit/<int:transaction_id>", methods=["GET", "POST"])`: Displays the form to edit a transaction and handles the POST request to update the transaction.
-- `@app.route("/delete/<int:transaction_id>")`: Deletes a transaction.
+## Code Structure
 
-## Running the Application
+The code is organized as follows:
 
-To run the application, use the following command:
+- **`app.py`**: Main file that contains the application logic.
+- **`templates/`**: Directory that stores the HTML templates for the interface.
+- **`static/`**: Folder for static resources such as CSS, JavaScript, etc.
+- **`README.md`**: This file with information about the project.
 
-```python
-if __name__ == "__main__":
-    app.run(debug=True)
-```
+## Contributions
+Contributions are welcome! If you find areas for improvement, feel free to fork the repository, make changes, and submit pull requests.
 
-This will start the Flask development server on your local machine.
+## Grades
+- The system uses a predefined list of transactions for demonstration. In a real environment, this information would be stored in a database.
+
+**Note**: Make sure to replace `app.py` with the name of the file where your main code is located.
+
+To run the application, simply run the mentioned file on your terminal and access `http://localhost:5000` in your browser.
+
+Enjoy recording your financial transactions with this simple system in Flask!
